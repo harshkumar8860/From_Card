@@ -25,10 +25,20 @@ function JobApplicationForm() {
     e.preventDefault();
     console.log(formData);
     alert("Form Submitted");
+    setFormData({
+      resume: null,
+      designation: "",
+      currentCTC: "",
+      expectedCTC: "",
+      noticePeriod: "",
+      country: "",
+      currentLocation: "",
+      preferredLocation: "",
+    })
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
+    <div className="flex items-center justify-center flex-grow p-4 overflow-auto mt-5">
       <form
         onSubmit={handleSubmit}
         className="p-8 border border-gray-300 rounded-lg bg-white shadow-lg max-w-6xl w-full"
@@ -41,7 +51,7 @@ function JobApplicationForm() {
           <input
             type="file"
             name="resume"
-            className="block w-1/2 text-md text-gray-700 border border-black rounded-md file:mr-4 file:py-2 file:px-4 file:rounded-md file:border file:border-black file:bg-gray-100 file:text-gray-600 title:upload your resume"
+            className="w-full sm:w-full md:w-1/2 lg:w-1/2 block text-md text-gray-700 border border-black rounded-md file:mr-4 file:py-2 file:px-4 file:rounded-md file:border file:border-black file:bg-gray-100 file:text-gray-600"
             onChange={handleChange}
           />
         </div>
